@@ -3,7 +3,7 @@
 // ==================================================
 function product() {
   if(num2 == undefined) num2 = 1;
-  if(num1 == undefined) num1 = 1;
+  if(num1 == undefined) num1 = 0;
 
   var $result= num1*num2 
   return $result
@@ -45,6 +45,9 @@ try {
   // Test Case 5
   // --------------------------------------------------
   // When invoked with no numbers, it should return 0.
+  var result = product();
+  if (result !== 0) throw new Error('Expected product(0) to be 0. Received: ' + result);
+
 
   console.log('All tests passed successfully.');
 
