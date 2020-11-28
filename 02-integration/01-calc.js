@@ -2,6 +2,21 @@
 // DEFINE FUNCTION(S)
 // ==================================================
 
+// ==================================================
+// SUM
+// ==================================================
+function sum(num1, num2) {
+
+  if(num2 == undefined) num2 = 0;
+  if(num1 == undefined) num1 = 0;
+
+  var $result= num1+num2 
+  return $result
+}
+
+// ==================================================
+// SUBTRACTION
+// ==================================================
 function difference(num1, num2) {
   if(num2 == undefined) num2 = 0;
   if(num1 == undefined) num1 = 0;
@@ -10,7 +25,9 @@ function difference(num1, num2) {
   return $result
 }
 
-
+// ==================================================
+// PRODUCT
+// ==================================================
 function product() {
   if(num2 == undefined) num2 = 1;
   if(num1 == undefined) num1 = 0;
@@ -18,9 +35,42 @@ function product() {
   var $result= num1*num2 
   return $result
 }
+// ==================================================
+// quotient
+// ==================================================
 
-function calc() {
+function quotient(num1,num2) {
+  vvar $result=0
+  if(num2 == undefined) num2 = 1;
+  if(num1 == undefined)
+  { return 0;
+  }
+  else if(num2!=0){
+  $result = Math.floor(~~(num1/num2));
+  return $result;
+  }
+  else return "ERROR"
+}
 
+function calc(op, num1, num2) {
+  switch(op){
+    case "add" :
+      result =  sum(num1,num2);
+      break;
+    case "subtract" :
+      result =  difference(num1,num2);
+      break;
+    case "mulitply" :
+      result = product(num1,num2);
+      break;
+    case "divide" :
+      result =  quotient(num1,num2);
+      break;
+    case "exponent" :
+      result = "operation not supported";
+      break
+  }
+  return result;
 }
 
 // ==================================================
@@ -39,7 +89,7 @@ try {
   // --------------------------------------------------
   // It should return the correct difference when the user provides: 'subtract', 20, 10.
   var result = calc('subtract', 20, 10);
-  if (result !== 2) throw new Error('Expected calc("add", 1, 1) to be 2. Received: ' + result);
+  if (result !== 2) throw new Error('Expected calc("subtract", 20, 10) to be 2. Received: ' + result);
   // --------------------------------------------------
   // Test Case 3
   // --------------------------------------------------
