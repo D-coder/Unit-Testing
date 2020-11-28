@@ -2,7 +2,11 @@
 // DEFINE FUNCTION(S)
 // ==================================================
 function product() {
+  if(num2 == undefined) num2 = 0;
+  if(num1 == undefined) num1 = 0;
 
+  var $result= num1*num2 
+  return $result
 }
 
 // ==================================================
@@ -20,6 +24,8 @@ try {
   // Test Case 2
   // --------------------------------------------------
   // It should return 0 when either of the numbers are 0.
+  var result = product(2, 0);
+  if (result !== 0) throw new Error('Expected product(2, 2) to be 4. Received: ' + result);
 
   // --------------------------------------------------
   // Test Case 3
