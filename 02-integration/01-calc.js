@@ -1,6 +1,24 @@
 // ==================================================
 // DEFINE FUNCTION(S)
 // ==================================================
+
+function difference(num1, num2) {
+  if(num2 == undefined) num2 = 0;
+  if(num1 == undefined) num1 = 0;
+
+  var $result= num1-num2 
+  return $result
+}
+
+
+function product() {
+  if(num2 == undefined) num2 = 1;
+  if(num1 == undefined) num1 = 0;
+
+  var $result= num1*num2 
+  return $result
+}
+
 function calc() {
 
 }
@@ -20,7 +38,8 @@ try {
   // Test Case 2
   // --------------------------------------------------
   // It should return the correct difference when the user provides: 'subtract', 20, 10.
-
+  var result = calc('subtract', 20, 10);
+  if (result !== 2) throw new Error('Expected calc("add", 1, 1) to be 2. Received: ' + result);
   // --------------------------------------------------
   // Test Case 3
   // --------------------------------------------------
